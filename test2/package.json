@@ -1,0 +1,38 @@
+{
+  "name": "test2",  // 프로젝트 이름(우리가 신경쓸 부분)
+  "version": "0.1.0", // 버전 정보(우리가 신경쓸 부분)
+  "private": true,
+  "dependencies": { // 종속성(우리가 신경쓸 부분)
+    "@testing-library/jest-dom": "^5.16.5", // 뒤에 숫자들은 버전 정보이고 ^는 이 버전 이상 사용 가능
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1", // ^이 없으면 해당 버전만 사용 가능
+    "web-vitals": "^2.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start", // 왼쪽은 명령어 오른쪽은 실제 내용(변수에 값을 넣은것)
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": { // 문법 검사 설정
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [  // 크롬, 파이어폭스, 사파리에서 동작한다
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
