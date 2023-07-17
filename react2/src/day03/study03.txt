@@ -1,0 +1,43 @@
+7/17
+state : 리액트 컴포넌트의 상태, 리액트 컴포넌트의 수정 가능한 데이터
+- 렌더링이나 데이터 흐름에 사용되는 값만 state에 포함해야 함
+(리액트에서 사용하는 데이터 2개..
+props : 매개변수. 부모컴포넌트 -> 자식컴포넌트, 읽기 전용
+state : 현재 컴포넌트의 데이터 수정. 수정 가능)
+- javascript object 타입으로 구성되어 있음
+- state도 직접적인 변경이 불가능함 (setState()라는 함수를 사용하여 수정)
+- 함수 컴포넌트에서는 hooks의 하나인 useState를 사용하여 수정
+- 클래스 컴포넌트에서는 setState() 함수를 사용함
+
+리액트 생명 주기 : 리액트 컴포넌트가 생성되고 수정되고 삭제될 때 실행되는 과정
+- 리액트 생명주기에 따라 3개의 메소드가 존재하고 실행됨
+- componentDidMount() : 컴포넌트가 생성된 후 실행되는 메소드
+- componentDidUpdate() : 컴포넌트의 내용이 수정된 후 실행되는 메소드, setState() 실행 시
+- componentWillUnmount() : 컴포넌트가 삭제되기 직전에 실행되는 메소드, 부모 컴포넌트에서 더 이상 자식 컴포넌트를 사용하지 않을 때
+
+Hooks : 리액트의 특정 기능이 hook을 걸어서 해당 기능을 사용할 수 있도록 해주는 기능
+- 함수 컴포넌트에는 원래 존재하지 않았던 생명주기 함수를 사용할 수 있도록 해주는 기능
+- setState 기능을 사용할 수 있도록 해주는 기능
+- custom hook을 사용하여 사용자가 필요한 기능을 추가로 생성하여 사용할 수 있음
+
+- useState : 클래스 컴포넌트의 setState를 사용할 수 있도록 하는 hook
+    - 사용법 : import React {useState} from 'react';
+    - const [ 변수명, set변수명 ] = useState(초기값);
+
+- useEffect : 클래스 컴포넌트의 생명주기 함수를 사용할 수 있도록 하는 hook
+    - useEffect 으로 componentDidMount(), componentDidUpdate, componentWillUnmount() 함수의 기능을 다 사용할 수 있음
+    - 의존성 배열로 지정된 변수의 값이 변경될 경우 지정한 콜백함수가 실행됨(componentDidUpdate() 기능)
+    - 의존성 배열을 빈 배열[]로 지정할 경우 컴포넌트 생성 후 지정된 콜백함수가 한번만 실행됨(componentDidMount() 기능)
+    - useEffect에서 return하는 함수는 컴포넌트가 해제될 때 실행됨 (componentWillUnmount() 기능)
+    - useEffect는 하나의 컴포넌트에서 여러개 사용해도 상관 없음
+    - 사용법 : import React {useEffect} from 'react';
+    - useEffect(이펙트 콜백 함수, 의존성 배열);
+
+- useRef : 특정 컴포넌트에 접근할 수 있도록 해주는 hook, 레퍼런스를 사용하기 위한 hook
+    - 레퍼런스란 리액트에서 특정 컴포넌트에 접근할 수 있는 객체를 의미
+    - 레퍼런스 객체는 current라는 속성이 존재하고 해당 속성은 현재 참조하고 있는 엘리먼트를 뜻함
+    - 특정 엘리먼트를 선택할 수 있음
+    - jquery에서 id값으로 지정한 태그를 찾는것과 비슷함
+    - 사용법 : import React, { useRef } from 'react';
+    - const refContainer = useRef(초기값);
+    - 랜더링 부분의 jsx 문법에 'ref' 속성을 지정하여 사용
