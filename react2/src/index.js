@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import App2 from "./App2";
 import BasicPage from "./day02/basicPage/BasicPage";
 import App4 from "./App4";
+import App5 from "./App5";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -13,7 +14,8 @@ root.render(
         {/*<App/>*/}
         {/*<App2/>*/}
         {/*<BasicPage/>*/}
-        <App4/> {/* App3은 BasicPage임 */}
+        {/*<App4/>*/} {/* App3은 BasicPage임 */}
+        <App5/>
     </React.StrictMode>
 );
 
