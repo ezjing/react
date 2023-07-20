@@ -8,6 +8,11 @@ import BasicPage from "./day02/basicPage/BasicPage";
 import App4 from "./App4";
 import App5 from "./App5";
 import App6 from "./App6";
+import App7 from "./App7";
+import App8 from "./App8";
+import App9 from "./App9";
+import App10 from "./App10";
+import App11 from "./App11";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,7 +22,12 @@ root.render(
         {/*<BasicPage/>*/}
         {/*<App4/>*/} {/* App3은 BasicPage임 */}
         {/*<App5/>*/}
-        <App6/>
+        {/*<App6/>*/}
+        {/*<App7/>*/}
+        {/*<App8/>*/}
+        {/*<App9 theme={'primary'} signedInUser={'경경아'}/>*/}
+        {/*<App10 theme={'success'} signedInUser={'카리나'}/>*/}
+        <App11/>
     </React.StrictMode>
 );
 
