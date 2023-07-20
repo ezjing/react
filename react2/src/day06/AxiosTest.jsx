@@ -16,7 +16,7 @@ function AxiosTest(props) {
                     str += `순위 : ${list[i].rnum}\n`;
                     str += `제목 : ${list[i].movieNm}\n`;
                     str += `개봉일 : ${list[i].openDt}\n`;
-                    str += `관람객 : ${list[i].audioCnt}\n`;
+                    str += `관람객 : ${list[i].audiCnt}\n`;
                     console.log(`${str}\n`)
                 }
             })

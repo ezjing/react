@@ -5,7 +5,7 @@ const ThemeContext = React.createContext('light');
 const UserContext = React.createContext('Guest');
 
 // 개발자 도구에 표시하기 위한 이름 설정
-UserContext.displayname = '유저컨텍스트';
+UserContext.displayName = '유저컨텍스트';
 
 function App10(props) {
     const {theme, signedInUser} = props;
