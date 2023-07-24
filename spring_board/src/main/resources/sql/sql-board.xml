@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--  spl 파일 명 꼭 확인하기 sql-xxx  -->
+<mapper namespace="com.bitc.spring_board.mapper.BoardMapper">
+    <select id="getBoardList" resultType="com.bitc.spring_board.DTO.BoardDTO">
+        SELECT * FROM sboard WHERE deleted_yn = 'N'
+    </select>
+    <select id="getBoardDetail" parameterType="int" resultType="com.bitc.spring_board.DTO.BoardDTO">
+        SELECT * FROM sboard
+        WHERE board_idx = #{boardIdx}
+    </select>
+    <update id="upHitCnt" parameterType="int">
+        UPDATE sboard SET hit_cnt = hit_cnt + 1
+        WHERE board_idx = #{boardIdx}
+    </update>
+    <update id="updateBoardDelete" parameterType="int">
+        UPDATE sboard SET deleted_yn = 'Y'
+        WHERE board_idx = #{boardIdx}
+    </update>
+    <update id="updateBoardEdit" parameterType="map">
+        UPDATE sboard SET title = #{title}, contents = #{contents}, update_id = #{updateId}, update_dt = NOW()
+        WHERE board_idx = #{boardIdx}
+    </update>
+    <insert id="insertBoard" parameterType="com.bitc.spring_board.DTO.BoardDTO">
+        INSERT INTO sboard (title, contents, create_id, create_dt)
+        VALUES (#{title}, #{contents}, #{createId}, NOW());
+    </insert>
+</mapper>
