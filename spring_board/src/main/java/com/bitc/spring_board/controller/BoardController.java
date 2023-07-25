@@ -9,7 +9,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @CrossOrigin(origins = {"http://localhost:3000", "http://localhost:4000"})
-@RequestMapping(value = "/board")
+@RequestMapping(value = "/jpa")
 @RestController
 public class BoardController {
 

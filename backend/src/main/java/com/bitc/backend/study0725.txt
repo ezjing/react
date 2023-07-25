@@ -1,0 +1,20 @@
+React
+bulid.gradle 설명
+  "scripts": {
+    "start": "react-scripts start", // 개발자 모드
+    "build": "react-scripts build", // 실제 배포 모드
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+
+리액트 구성편집 npm build 새로만들기(start를 bulid로 바꾸기만하면됨)
+- 스프링으로 와서 gradle- tasks- build- bootJar- libs의 SNAPSHOT은 배포 파일의 버전을 나타내며 bulid.gradle에서 숫자를 바꿈으로 버전 바꿀 수 있다
+
+실제 작업 시 순서
+백엔드 프로젝트 먼저 생성 - src - main 에서 프론트엔드 프로젝트 생성
+
+프론트엔드 build 생성 및 실행 -> 백엔드 build 생성 확인 -> 
+백엔드에 프론트엔드 통합 -> build.gradle 내용 수정 -> bootJar 실행하여 파일 생성 ->
+cmd -> cd C:\smart505\react\backend\build\libs 로 경로 변경 -> dir 명령어로 파일 생성 확인 ->
+java -jar backend-0.0.1 SNAPSHOT.jar 명령어로 실행!!! 하면 local:8080으로 프론트엔드 실행됨(만약 스냅샷 버전이 변경되었으면 backend-0.1.1 SNAPSHOT.jar 이런 식으로 변경된 버전의 스냅샷을 적어줘야함!!!!)
+(백앤드에 프론트앤드 합칠때 프론트 서버 죽이고 합치기)
