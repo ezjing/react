@@ -46,3 +46,18 @@ inline if ~ else : if ~ else 문을 조건부 랜더링이 필요한 곳에 입�
 다운로드가 완료되면 구성편집에서 npm 추가, 이름, 명령어 run, 스트립트 start, 그 외 기본값(노드 인터프리터, 패키지 관리자 정상적으로 입력 된지만 확인하면 됨)
 
 구성편집에서 자바스크립트 디버그 추가, 이름, URL http://localhost:3000, 브라우저 크롬, 그 외는 선택사항
+
+React 파일 템플릿 만들기 : 파일 및 코드 템플릿 들어가서 + 클릭
+이름 : React 파일
+확장 : jsx
+파일이름 : 생략
+내용 : 
+import React from "react";
+
+function ${NAME}(props) {
+    return (
+        
+    )
+}
+
+export default ${NAME};
